@@ -2,6 +2,7 @@
 public class Main {
 	public static void main(String[] args) {
 		double pos = 0;
+		int count = 0;
 		RollingDice dice = new RollingDice();
 		Options opt = new Options();
 		while (pos<30)
@@ -37,6 +38,8 @@ public class Main {
 				System.out.println("Snake");
 				System.out.println("The player position is "+pos);
 			}	
+			count++;
 		}
+		System.out.println("The dice was rolled "+count+" times");
 	}
 }
