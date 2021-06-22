@@ -4,7 +4,7 @@ public class Main {
 		double pos = 0;
 		RollingDice dice = new RollingDice();
 		Options opt = new Options();
-		while (pos<=20)
+		while (pos<30)
 		{
 			double roll = dice.Roll();
 			System.out.println("The number on dice is "+roll);
@@ -16,8 +16,16 @@ public class Main {
 			else if (opt.Option() == 1)
 			{
 				pos = pos + roll;
-				System.out.println("Ladder");
-				System.out.println("The player position is "+pos);
+				if (pos > 30)
+				{
+					pos = pos - roll;
+					System.out.println("Exceeded 30 try again");
+					System.out.println("The player position is still "+pos);
+				}
+				else {
+					System.out.println("Ladder");
+					System.out.println("The player position is "+pos);
+				}
 			}
 			else
 			{
@@ -28,8 +36,7 @@ public class Main {
 				}
 				System.out.println("Snake");
 				System.out.println("The player position is "+pos);
-			}
-			
+			}	
 		}
 	}
 }
