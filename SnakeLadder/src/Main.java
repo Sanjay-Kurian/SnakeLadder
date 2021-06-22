@@ -1,9 +1,27 @@
 
 public class Main {
 	public static void main(String[] args) {
-		int pos = 0;
-		System.out.println("The player is starting at position "+pos);
+		double pos = 0;
 		RollingDice dice = new RollingDice();
-		System.out.println("The number on dice is "+dice.Roll());
+		Options opt = new Options();
+		double roll = dice.Roll();
+		System.out.println("The number on dice is "+roll);
+		if (opt.Option() == 0)
+		{
+			System.out.println("No play");
+			System.out.println("The player position is "+pos);
+		}
+		else if (opt.Option() == 1)
+		{
+			pos = pos + roll;
+			System.out.println("Ladder");
+			System.out.println("The player position is "+pos);
+		}
+		else
+		{
+			pos = pos - roll;
+			System.out.println("Snake");
+			System.out.println("The player position is "+pos);
+		}
 	}
 }
